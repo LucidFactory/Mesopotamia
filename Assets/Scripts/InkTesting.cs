@@ -78,16 +78,46 @@ public class InkTesting : MonoBehaviour
     /// <summary>
     /// Affiche les différents choix possible sur le dialogue en cours
     /// </summary>
+    //private void ShowChoices()
+    //{
+    //    foreach (Choice choice in _story.currentChoices)
+    //    {
+    //        Button choiceButton = Instantiate(buttonPrefab,_buttonTransform , false);
+    //        TMP_Text choiceText = buttonPrefab.GetComponentInChildren<TMP_Text>();
+    //        choiceText.text = choice.text;
+    //        Debug.Log("Le titre du choix est => " + choice.text);
+    //        Debug.Log("Le text du Text est => " + choiceText.text);
+
+    //        choiceButton.onClick.AddListener(() => ChooseStoryChoice(choice));
+    //    }
+    //}
+
     private void ShowChoices()
     {
+        //if (_story.currentChoices.Count > 0)
+        //{
+        //    for (int i = 0; i < _story.currentChoices.Count; i++)
+        //    {
+        //        Choice choice = _story.currentChoices[i];
+        //        Button choiceButton = Instantiate(buttonPrefab, _buttonTransform, false);
+        //        TMP_Text choiceText = buttonPrefab.GetComponentInChildren<TMP_Text>();
+        //        choiceText.text = choice.text;
+        //        Debug.Log("Le titre du choix est => " + choice.text);
+        //        Debug.Log("Le text du Text est => " + choiceText.text);
+
+        //        choiceButton.onClick.AddListener(() => ChooseStoryChoice(choice));
+        //    }
+        //}
+
+
         foreach (Choice choice in _story.currentChoices)
         {
-            Button choiceButton = Instantiate(buttonPrefab,_buttonTransform , false);
+            Button choiceButton = Instantiate(buttonPrefab, _buttonTransform, false);
             TMP_Text choiceText = buttonPrefab.GetComponentInChildren<TMP_Text>();
             choiceText.text = choice.text;
             Debug.Log("Le titre du choix est => " + choice.text);
             Debug.Log("Le text du Text est => " + choiceText.text);
-            
+
             choiceButton.onClick.AddListener(() => ChooseStoryChoice(choice));
         }
     }
@@ -99,7 +129,7 @@ public class InkTesting : MonoBehaviour
         foreach (Transform childTransform in gameObject.transform)
         {
             if (childTransform.name == "Title") continue;
-            for (int i = 0; i < childTransform.childCount; i++)
+            for (int i = childTransform.childCount - 1; i >= 0 ; --i)
             {
                 Destroy(childTransform.GetChild(i).gameObject);
             }
