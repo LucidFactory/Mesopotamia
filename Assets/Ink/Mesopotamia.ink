@@ -7,6 +7,7 @@ Le <b>dieu lunaire</b> Sîn quitte sa demeure en la <i>cité d’Ur</i>, l’Egi
 *[Démarrer la procession] -> procession
 
 === procession ===
+#MiniGame:Physique;Cible
 Les flots matinaux emportent la divine embarcation. Le soleil est encore bas sur l’horizon, les oiseaux s’envolent doucement depuis les roseaux et les joncs qui enlacent le fleuve. Sur les barques qui accompagnent celles du dieu, manœuvrées par des esclaves ou des bateleurs, voyagent les dignitaires et les personnes de haut rang. Sur la berge, les échansons, protecteurs, danseurs et musiciens complètent la procession. On transporte des moutons et des porcs, des chariots de denrées sont tractés par des onagres.
 *[nadîtum] -> naditum
 
