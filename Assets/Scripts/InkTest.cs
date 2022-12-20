@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Ink.Parsed;
 using Ink.Runtime;
 using TMPro;
@@ -25,6 +26,8 @@ public class InkTest : MonoBehaviour
     private Transform _titleTransform;
     private Transform _dialogueTransform;
     private Transform _buttonTransform;
+
+    private Button button;
 
     public bool _IsMiniGame = false;
 
@@ -70,6 +73,33 @@ public class InkTest : MonoBehaviour
         title.text = tag.Replace("Title:", "");
     }
 
+
+    ///////////////////////////////////////////
+    private void SearchAllTags()
+    {
+        //foreach (string s in _story.currentTags.Where(s => s.Contains("MiniGame")))
+        foreach (string s in _story.currentTags)
+        {
+            string [] Test = s.Split(':');
+            Debug.Log(Test[0]);
+            SwitchOnTag(Test);
+        }
+    }
+
+    private void SwitchOnTag(string [] tag)
+    {
+        switch (tag[0])
+        {
+            case "Title":
+                ShowTitle(tag[1]);
+                break;
+            case "MiniGame":
+                StartMinigame();
+                break;
+        }
+    }
+    //////////////////////////////////////////
+
     // This is the main function called every time the story changes. It does a few things:
     // Destroys all the old content and choices.
     // Continues over all the lines of text, then displays all the choices. If there are no choices, the story is finished!
@@ -88,7 +118,7 @@ public class InkTest : MonoBehaviour
 
             // Display the text on screen!
             CreateContentView();
-            SearchingTags();
+            //SearchingTags();                                            ////////////////////////////////////////////////////////////
         }
 
         // Display all the choices, if there are any!
@@ -134,6 +164,9 @@ public class InkTest : MonoBehaviour
     // Creates a button showing the choice text
     Button CreateChoiceView(string text)
     {
+        ///regarder les tag 
+        SearchAllTags();                                            //////////////////////////////////////
+
         // Creates the button from a prefab
         Button choice = Instantiate(buttonPrefab, _buttonTransform, false);
 
@@ -142,18 +175,20 @@ public class InkTest : MonoBehaviour
         choiceText.text = text;
 
 
+        ///le bouton doit lancer un minigame 
+
         /////////////////////////////////////////////
-        if (choiceText.text.Equals("nadîtum"))
-        {
-            //choice.gameObject.tag = "MiniGame";
-            _IsMiniGame = true; 
-        }
+        //if (choiceText.text.Equals("nadîtum"))
+        //{
+        //    choice.gameObject.tag = "MiniGame";
+        //    _IsMiniGame = true; 
+        //}
         
-        if (_IsMiniGame)
-        {
-            Debug.Log("hello");
-            choice.onClick.AddListener(() => { _IsMiniGame = true;StartMinigame(); });
-        }
+        //if (_IsMiniGame)
+        //{
+        //    Debug.Log("hello");
+        //    choice.onClick.AddListener(() => { _IsMiniGame = true;StartMinigame(); });
+        //}
         /////////////////////////////////////////////
 
         return choice;
