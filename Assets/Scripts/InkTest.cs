@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Ink.Parsed;
 using Ink.Runtime;
 using TMPro;
@@ -26,6 +27,8 @@ public class InkTest : MonoBehaviour
     private Transform _dialogueTransform;
     private Transform _buttonTransform;
 
+    private Button button;
+
     public bool _IsMiniGame = false;
 
     void Awake()
@@ -46,7 +49,6 @@ public class InkTest : MonoBehaviour
 
         RefreshView();
     }
-    
     // This is the main function called every time the story changes. It does a few things:
     // Destroys all the old content and choices.
     // Continues over all the lines of text, then displays all the choices. If there are no choices, the story is finished!
@@ -145,7 +147,6 @@ public class InkTest : MonoBehaviour
         // Gets the text from the button prefab
         TMP_Text choiceText = choice.GetComponentInChildren<TMP_Text>();
         choiceText.text = text;
-        
         return choice;
     }
 

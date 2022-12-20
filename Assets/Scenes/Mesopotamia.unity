@@ -1090,3 +1090,4 @@ MonoBehaviour:
   buttonPrefab: {fileID: 8212629034366783186, guid: d353cdaa554f5594aba85296d305040f, type: 3}
   _CanvasToHide: {fileID: 2039932779}
   _CanvasMiniGameToShow: {fileID: 382596926}
+  _IsMiniGame: 0
