@@ -22,8 +22,8 @@ public class InkTest : MonoBehaviour
     public Button buttonPrefab;
     public Canvas _CanvasToHide;
     public Canvas _CanvasMiniGameToShow;
+    public TMP_Text _TitleText;
 
-    private Transform _titleTransform;
     private Transform _dialogueTransform;
     private Transform _buttonTransform;
 
@@ -43,7 +43,6 @@ public class InkTest : MonoBehaviour
     {
         _story = new Story(_inkJson.text);
 
-        _titleTransform = GameObject.Find("Title").transform;
         _dialogueTransform = GameObject.Find("Dialogue").transform;
         _buttonTransform = GameObject.Find("Choix").transform;
 
@@ -52,6 +51,7 @@ public class InkTest : MonoBehaviour
     // This is the main function called every time the story changes. It does a few things:
     // Destroys all the old content and choices.
     // Continues over all the lines of text, then displays all the choices. If there are no choices, the story is finished!
+
     void RefreshView()
     {
         // Remove all the UI on screen
@@ -126,9 +126,7 @@ public class InkTest : MonoBehaviour
     /// <param name="titre">Le tag correspondant au titre en cours</param>
     private void ShowTitle(string titre)
     {
-        
-        TMP_Text title = Instantiate(textPrefab, _titleTransform, false);
-        title.text = titre;
+        _TitleText.text = titre.Trim();
     }
 
     
@@ -150,6 +148,10 @@ public class InkTest : MonoBehaviour
         return choice;
     }
 
+    /// <summary>
+    /// Commencer le mini jeu
+    /// </summary>
+    /// <param name="groupeEpreuve"></param>
     void StartMinigame(string groupeEpreuve)
     {
         // Etape X : Apeller le MiniGameManager en lui passant groupeEpreuve dans son constructeur
@@ -159,7 +161,6 @@ public class InkTest : MonoBehaviour
         _CanvasMiniGameToShow.gameObject.SetActive(true);
         _IsMiniGame = false;
     }
-
 
 
     // Destroys all the children of this gameobject (all the UI)
