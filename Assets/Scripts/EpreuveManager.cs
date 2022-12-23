@@ -35,7 +35,7 @@ public class EpreuveManager : MonoBehaviour
                     case "Course Poursuite":
                         break;
                     case "Combat":
-                        //instantie la première cible et lance la coroutine
+                        //instantie la premiÃ¨re cible et lance la coroutine
                         GameObject epreuveCombatManager = Instantiate(_prefabEpreuveCombatManager, new Vector3(0,0,0), Quaternion.identity);
                         _prefabEpreuveCombatManager.GetComponent<EpreuveCombatManager>()._timerBeforeSpawningNextTarget = 4.0f;
 
