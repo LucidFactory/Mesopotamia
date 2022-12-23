@@ -24,7 +24,7 @@ Ennegi est à peine plus qu’un grand village. L’empreinte de sa grandeur pas
 -> naditum2
 
 === naditum2 ===
-#MiniGame:Physique;Combat;30;300
+#MiniGame:Tendre L'oreille;Physique_Combat_30_300
 Tu descends de ton embarcation, tes gens déchargent tes affaires. Tu vois au loin les prêtres de Ningirida échanger quelques mots avec la grande prêtresse de Sîn, tandis que d’autres débarquent avec grand soin la statue du dieu. Un homme se présente à toi : « Bienvenue nadîtum, Ennegi n’est pas très grande, mais nous disposons d’une belle auberge. J’en suis le tenancier : soyez mon hôte. »
 
 * [Accepter] -> accepter1

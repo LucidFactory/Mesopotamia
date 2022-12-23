@@ -81,14 +81,17 @@ public class InkTest : MonoBehaviour
                             ShowTitle(tagSplitter[1]);
                             break;
                         case "MiniGame" :
-                            button.onClick.AddListener(() =>
+                            string[] tagSplitter2 = tagSplitter[1].Split(";");
+                            button.gameObject.SetActive(false);
+
+                            Button epreuveButton = CreateChoiceView(tagSplitter2[0]);
+
+                            epreuveButton.onClick.AddListener(() =>
                             {
                                 _IsMiniGame = true;
-                                StartEpreuve(tagSplitter[1]);
+                                StartEpreuve(tagSplitter2[1]);
                             });
                             break;
-                        default:
-                            break;  
                     }
                 }
 

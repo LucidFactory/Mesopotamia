@@ -25,7 +25,7 @@ public class EpreuveManager : MonoBehaviour
     }
     public void ChooseEpreuve(string GroupeEpreuve)
     {
-        string[] SplitEpreuve = GroupeEpreuve.Split(";");
+        string[] SplitEpreuve = GroupeEpreuve.Split("_");
 
         switch (SplitEpreuve[0])
         {
