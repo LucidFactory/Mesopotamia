@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class MiniGameManager : MonoBehaviour
+public class MiniGameManager
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string GroupeEpreuve { get; private set; }
+    public string Epreuve { get; private set; }
 
-    // Update is called once per frame
-    void Update()
+    public MiniGameManager(string groupeEpreuve)
     {
-        
+        string[] SplitEpreuve = groupeEpreuve.Split(";");
+        GroupeEpreuve = SplitEpreuve[0]; 
+        Epreuve = SplitEpreuve[1]; 
     }
 }

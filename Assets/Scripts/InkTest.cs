@@ -20,21 +20,21 @@ public class InkTest : MonoBehaviour
 
     public TMP_Text textPrefab;
     public Button buttonPrefab;
-    public Canvas _CanvasToHide;
-    public Canvas _CanvasMiniGameToShow;
     public TMP_Text _TitleText;
+    public bool _IsMiniGame = false;
 
     private Transform _dialogueTransform;
     private Transform _buttonTransform;
 
-    private Button button;
+    [SerializeField, Tooltip("Serialized")]
+    private EpreuveManager _EpreuveManager;
 
-    public bool _IsMiniGame = false;
 
     void Awake()
     {
         // Remove the default message
         ReinitialiseNode();
+        // Initialize the story
         StartStory();
     }
 
@@ -84,7 +84,7 @@ public class InkTest : MonoBehaviour
                             button.onClick.AddListener(() =>
                             {
                                 _IsMiniGame = true;
-                                StartMinigame(tagSplitter[1]);
+                                StartEpreuve(tagSplitter[1]);
                             });
                             break;
                         default:
@@ -152,16 +152,15 @@ public class InkTest : MonoBehaviour
     /// Commencer le mini jeu
     /// </summary>
     /// <param name="groupeEpreuve"></param>
-    void StartMinigame(string groupeEpreuve)
+    void StartEpreuve(string groupeEpreuve)
     {
-        // Etape X : Apeller le MiniGameManager en lui passant groupeEpreuve dans son constructeur
-        //           qui va spliter sur ';' et qui va envoyer le bon mini jeu du bon groupe
         Debug.Log("Est ce que j'ai bien passé mon épreuve ? => " + groupeEpreuve);
-        _CanvasToHide.gameObject.SetActive(false);
-        _CanvasMiniGameToShow.gameObject.SetActive(true);
+        _EpreuveManager.ChooseEpreuve(groupeEpreuve);
+
+        // a retirer plus tard après avoir crée le premier mini jeu
         _IsMiniGame = false;
     }
-
+    
 
     // Destroys all the children of this gameobject (all the UI)
     void ReinitialiseNode()
