@@ -14,11 +14,13 @@ public class EpreuveCombat : MonoBehaviour
     private float _x;
     private float _y;
     private Vector3 _randomPosition;
+    private EpreuveCombatManager _epreuveCombatManager;
 
     private void Awake()
     {
         //find the EpreuveScoreManager script in order to use it later on
         _scoreManager = GameObject.Find("Score(Clone)").GetComponent<EpreuveScoreManager>();
+        _epreuveCombatManager = GameObject.Find("EpreuveCombatManager(Clone)").GetComponent<EpreuveCombatManager>();
 
         //Starts the timer when the target is instantiated
         _timeIsRunning = true;
@@ -65,21 +67,29 @@ public class EpreuveCombat : MonoBehaviour
                     case "AnneauBleu":
                         Debug.Log("AnneauBleu was hit");
                         _scoreManager.UpdateScore(25);
+                        _epreuveCombatManager.InstantiateTarget(); //
+                        _epreuveCombatManager._timerBeforeSpawningNextTarget = _epreuveCombatManager._timer;
                         Destroy(gameObject, 0.1f);
                         break;
                     case "AnneauRouge":
                         Debug.Log("AnneauRouge was hit");
                         _scoreManager.UpdateScore(35);
+                        _epreuveCombatManager.InstantiateTarget(); //
+                        _epreuveCombatManager._timerBeforeSpawningNextTarget = _epreuveCombatManager._timer;
                         Destroy(gameObject, 0.1f);
                         break;
                     case "AnneauJaune":
                         Debug.Log("AnneauJaune was hit");
                         _scoreManager.UpdateScore(50);
+                        _epreuveCombatManager.InstantiateTarget(); //
+                        _epreuveCombatManager._timerBeforeSpawningNextTarget = _epreuveCombatManager._timer;
                         Destroy(gameObject, 0.1f);
                         break;
                     case "AnneauNoir":
                         Debug.Log("AnneauNoir was hit");
                         _scoreManager.UpdateScore(100);
+                        _epreuveCombatManager.InstantiateTarget(); //
+                        _epreuveCombatManager._timerBeforeSpawningNextTarget = _epreuveCombatManager._timer;
                         Destroy(gameObject, 0.1f);
                         break;
                 }
@@ -96,6 +106,7 @@ public class EpreuveCombat : MonoBehaviour
             if (_lifeTime <= 0.0f)
             {
                 Debug.Log("Timer is finihsed");
+                _scoreManager.UpdateScore(-10);
                 Destroy(gameObject, 0.1f);
                 _timeIsRunning = false;
             }

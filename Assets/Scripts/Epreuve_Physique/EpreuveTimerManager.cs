@@ -6,6 +6,7 @@ using UnityEngine;
 public class EpreuveTimerManager : MonoBehaviour
 {
     public float _epreuveTimer;
+    private bool _epreuveIsOver;
     private TMP_Text _timerText;
     private GameObject _epreuveManager;
 
@@ -14,6 +15,7 @@ public class EpreuveTimerManager : MonoBehaviour
         _timerText = this.gameObject.GetComponent<TMP_Text>();
 
         _epreuveManager = GameObject.Find("EpreuveManager");
+        _epreuveIsOver = true;
     }
 
     public void InitializeTimer(float time)
@@ -27,11 +29,14 @@ public class EpreuveTimerManager : MonoBehaviour
         _epreuveTimer -= Time.deltaTime;
         _timerText.text = "Time Remaining " + _epreuveTimer.ToString();
 
-        if(_epreuveTimer <= 0 && _epreuveManager != null)
+        if(_epreuveIsOver && _epreuveTimer <= 0 && _epreuveManager != null)
         {
-           EpreuveManager epreuveManager = _epreuveManager.GetComponent<EpreuveManager>();
+            EpreuveManager epreuveManager = _epreuveManager.GetComponent<EpreuveManager>();
             epreuveManager.ShowUi();
             epreuveManager.DestroyTimerAndScore();
+            epreuveManager.ShowButton();
+            epreuveManager.GetScoreAndSwitchCanvasPage();
+            _epreuveIsOver = false;
         }
 
     }

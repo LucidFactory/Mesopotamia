@@ -16,7 +16,7 @@ public class InkTest : MonoBehaviour
     //public static event Action<Story> OnCreateStory;
 
     public TextAsset _inkJson;
-    private Story _story;
+    public Story _story;
 
     public TMP_Text textPrefab;
     public Button buttonPrefab;
@@ -28,6 +28,10 @@ public class InkTest : MonoBehaviour
 
     [SerializeField, Tooltip("Serialized")]
     private EpreuveManager _EpreuveManager;
+
+    public bool _ButtonWasPressed;
+    public Button _button;
+    public Button _epreuveButton;
 
 
     void Awake()
@@ -70,7 +74,7 @@ public class InkTest : MonoBehaviour
             for (int i = 0; i < _story.currentChoices.Count; i++)
             {
                 Choice choice = _story.currentChoices[i];
-                Button button = CreateChoiceView(choice.text.Trim());
+                _button = CreateChoiceView(choice.text.Trim());
                 
                 foreach (string tag in _story.currentTags)
                 {
@@ -82,15 +86,20 @@ public class InkTest : MonoBehaviour
                             break;
                         case "MiniGame" :
                             string[] tagSplitter2 = tagSplitter[1].Split(";");
-                            button.gameObject.SetActive(false);
+                            //Hide the button created from Ink and replace them by a button for the Epreuve
+                            _button.gameObject.SetActive(false);
 
-                            Button epreuveButton = CreateChoiceView(tagSplitter2[0]);
-
-                            epreuveButton.onClick.AddListener(() =>
+                            if (!_ButtonWasPressed)
                             {
-                                _IsMiniGame = true;
-                                StartEpreuve(tagSplitter2[1]);
-                            });
+                                _ButtonWasPressed = true;
+                                _epreuveButton = CreateChoiceView(tagSplitter2[0]);
+
+                                _epreuveButton.onClick.AddListener(() =>
+                                {
+                                    _IsMiniGame = true;
+                                    StartEpreuve(tagSplitter2[1]);
+                                });
+                            }
                             break;
                     }
                 }
@@ -98,7 +107,7 @@ public class InkTest : MonoBehaviour
                 if (!_IsMiniGame)
                 {
                     // Tell the button what to do when we press it
-                    button.onClick.AddListener(delegate
+                    _button.onClick.AddListener(delegate
                     {
                         OnClickChoiceButton(choice);
                     });
@@ -134,7 +143,7 @@ public class InkTest : MonoBehaviour
 
     
     // When we click the choice button, tell the story to choose that choice!
-    private void OnClickChoiceButton(Choice choice)
+    public void OnClickChoiceButton(Choice choice)
     {
         _story.ChooseChoiceIndex(choice.index);
         RefreshView();

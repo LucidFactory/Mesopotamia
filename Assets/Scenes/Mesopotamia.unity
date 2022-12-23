@@ -991,6 +991,8 @@ MonoBehaviour:
   _timerTextPrefab: {fileID: 4913379588667357750, guid: d783c48db10ffe748a3d58abfb078537, type: 3}
   _scoreTextPrefab: {fileID: 8123678073142267715, guid: 922b6c0cafdf0e94db025813aec06c56, type: 3}
   _canvasParent: {fileID: 1847941400}
+  _inkTest: {fileID: 2039932781}
+  _canvasChoix: {fileID: 280506493}
 --- !u!4 &1682054393
 Transform:
   m_ObjectHideFlags: 0
@@ -1038,10 +1040,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 264d45128dbeb3b4eb7d6f930d25db4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _epreuveTimer: 10
-  _score: 0
-  _timerText: {fileID: 0}
-  _scoreText: {fileID: 0}
 --- !u!114 &1847941397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1394,3 +1392,6 @@ MonoBehaviour:
   _TitleText: {fileID: 1191403118}
   _IsMiniGame: 0
   _EpreuveManager: {fileID: 1682054392}
+  _ButtonWasPressed: 0
+  _button: {fileID: 0}
+  _epreuveButton: {fileID: 0}

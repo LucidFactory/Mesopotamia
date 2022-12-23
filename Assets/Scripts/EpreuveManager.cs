@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EpreuveManager : MonoBehaviour
 {
@@ -10,6 +13,8 @@ public class EpreuveManager : MonoBehaviour
     public GameObject _scoreTextPrefab;
 
     public Transform _canvasParent;
+    public InkTest _inkTest;
+    public GameObject _canvasChoix;
 
     private GameObject _canvasToHide;
     private GameObject _epreuveCombatManager;
@@ -36,15 +41,18 @@ public class EpreuveManager : MonoBehaviour
                         break;
                     case "Combat":
                         //instantie la première cible et lance la coroutine
-                        GameObject epreuveCombatManager = Instantiate(_prefabEpreuveCombatManager, new Vector3(0,0,0), Quaternion.identity);
-                        _prefabEpreuveCombatManager.GetComponent<EpreuveCombatManager>()._timerBeforeSpawningNextTarget = 4.0f;
+                        _epreuveCombatManager = Instantiate(_prefabEpreuveCombatManager, new Vector3(0,0,0), Quaternion.identity);
+                        _epreuveCombatManager.GetComponent<EpreuveCombatManager>()._timer = 4.0f;
 
                         //instantie le timer et set le timer
+                        int num = int.Parse(SplitEpreuve[2]);
                         _timerText = Instantiate(_timerTextPrefab, _canvasParent);
-                        _timerText.GetComponent<EpreuveTimerManager>().InitializeTimer(10.0f);
+                        _timerText.GetComponent<EpreuveTimerManager>().InitializeTimer(num);
 
                         //instantie le score
+                        //int num2 = int.Parse(SplitEpreuve[3]);
                         _scoreText = Instantiate(_scoreTextPrefab, _canvasParent);
+                        //_scoreText.GetComponent<EpreuveScoreManager>().InitializeScore(num2);
 
                         //cache l'UI de l'histoire
                         HideUI();
@@ -102,6 +110,7 @@ public class EpreuveManager : MonoBehaviour
 
             Destroy(_epreuveCombatManager, 0.1f);
         }
+        _inkTest._ButtonWasPressed = false;
     }
 
     public void DestroyTimerAndScore()
@@ -110,4 +119,32 @@ public class EpreuveManager : MonoBehaviour
         Destroy(_scoreText, 0.1f);
     }
 
+    public void ShowButton()
+    {
+        int childcount = _canvasChoix.transform.childCount;
+        for (int i = 0; i < childcount; i++)
+        {
+            if (_canvasChoix.transform.GetChild(i).gameObject.activeInHierarchy == false)
+            {
+                _canvasChoix.transform.GetChild(i).gameObject.SetActive(true);
+            }
+        }
+
+        _inkTest._epreuveButton.gameObject.SetActive(false);
+    }
+
+    public void GetScoreAndSwitchCanvasPage()
+    {
+        float Score = _scoreText.GetComponent<EpreuveScoreManager>()._score;
+
+        if (Score >= 100)
+        {
+            _inkTest.OnClickChoiceButton(_inkTest._story.currentChoices[0]);
+        }
+        else
+        {
+            _inkTest.OnClickChoiceButton(_inkTest._story.currentChoices[1]);
+        }
+
+    }
 }
