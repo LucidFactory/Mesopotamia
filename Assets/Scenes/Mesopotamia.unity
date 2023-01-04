@@ -320,7 +320,7 @@ RectTransform:
   m_Children:
   - {fileID: 1986845022}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -815,13 +815,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342026937}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -640, y: -296.03522, z: 0}
+  m_LocalScale: {x: 1.1277533, y: 1.1277533, z: 1.1277533}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 2039932780}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1498703496
 GameObject:
@@ -987,6 +987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7559570386f50d448514d95e7022b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PrefabBT: {fileID: 1502069349218217149, guid: 5caf66aa988e81d4aaeaad865f8729cc, type: 3}
   _prefabEpreuveCombatManager: {fileID: 2471392016703878300, guid: 9aa775a34882ee545931297fad7db603, type: 3}
   _timerTextPrefab: {fileID: 4913379588667357750, guid: d783c48db10ffe748a3d58abfb078537, type: 3}
   _scoreTextPrefab: {fileID: 8123678073142267715, guid: 922b6c0cafdf0e94db025813aec06c56, type: 3}
@@ -1006,7 +1007,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1847941395
 GameObject:
@@ -1114,7 +1115,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1268,8 +1269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d68c73890db1ff4588d9934db238cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _TargetButton: {fileID: 1986845023}
-  _targetCanvas: {fileID: 2039932779}
 --- !u!1 &2039932774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,8 +1365,9 @@ RectTransform:
   - {fileID: 1149323019}
   - {fileID: 586689722}
   - {fileID: 280506494}
+  - {fileID: 1342026940}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
+  m_Name: BehaviourTree
+  m_EditorClassIdentifier: 
+  rootNode:
+    rid: 164132997397217296
+  nodes:
+  - rid: 164132997397217296
+  - rid: 164132997397217307
+  - rid: 164132997397217320
+  - rid: 164132997397217321
+  - rid: 164132997397217322
+  - rid: 164132997397217323
+  treeState: 0
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+    _canvasToHide: {fileID: 0}
+  viewPosition: {x: 297, y: 67, z: 0}
+  viewScale: {x: 0.8695652, y: 0.8695652, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 164132997397217296
+      type: {class: RootNode, ns: TheKiwiCoder, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 2d1d05b0-0271-4fff-8e11-42415daeae3c
+        position: {x: -15.869987, y: 23.805014}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+          _canvasToHide: {fileID: 0}
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 164132997397217322
+    - rid: 164132997397217307
+      type: {class: A_FindCanvas, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 6fbb7ba1b8c29c144a0eae751d21ce0d
+        position: {x: -315.71967, y: 532}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+          _canvasToHide: {fileID: 0}
+        description: 
+        drawGizmos: 0
+        _canvasName: CanvasInk
+    - rid: 164132997397217320
+      type: {class: Sequencer, ns: TheKiwiCoder, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 311811af878df7e4bb6bf05fee8b828d
+        position: {x: -220.00006, y: 367.485}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+          _canvasToHide: {fileID: 0}
+        description: 'trouver le canvas a cacher
+
+          cacher le canvas'
+        drawGizmos: 0
+        children:
+        - rid: 164132997397217307
+        - rid: 164132997397217321
+    - rid: 164132997397217321
+      type: {class: A_HideUI, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: b1913ec6a6963584c86b984a19462f86
+        position: {x: -145.00003, y: 532.48505}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+          _canvasToHide: {fileID: 0}
+        description: 
+        drawGizmos: 0
+        _canvasToHide: {fileID: 0}
+    - rid: 164132997397217322
+      type: {class: Selector, ns: TheKiwiCoder, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 98f506d24c9a97e43977bdbe9ebf7a7e
+        position: {x: -16.000027, y: 156.485}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+          _canvasToHide: {fileID: 0}
+        description: 
+        drawGizmos: 0
+        children:
+        - rid: 164132997397217320
+        - rid: 164132997397217323
+    - rid: 164132997397217323
+      type: {class: Log, ns: TheKiwiCoder, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 9be2143428aaca9438d729186a54e80a
+        position: {x: 166.44388, y: 367}
+        blackboard:
+          moveToPosition: {x: 0, y: 0, z: 0}
+          _canvasToHide: {fileID: 0}
+        description: 
+        drawGizmos: 0
+        message: "Canvas non trouv\xE9"

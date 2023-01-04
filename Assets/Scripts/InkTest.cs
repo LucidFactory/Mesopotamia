@@ -96,6 +96,8 @@ public class InkTest : MonoBehaviour
 
                                 _epreuveButton.onClick.AddListener(() =>
                                 {
+
+                                    // A REMPLACER
                                     _IsMiniGame = true;
                                     StartEpreuve(tagSplitter2[1]);
                                 });
@@ -167,6 +169,8 @@ public class InkTest : MonoBehaviour
     void StartEpreuve(string groupeEpreuve)
     {
         Debug.Log("Est ce que j'ai bien passé mon épreuve ? => " + groupeEpreuve);
+
+        // A REMPLACER
         _EpreuveManager.ChooseEpreuve(groupeEpreuve);
 
         // a retirer plus tard après avoir crée le premier mini jeu

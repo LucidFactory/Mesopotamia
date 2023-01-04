@@ -20,7 +20,7 @@ public class EpreuveTimerManager : MonoBehaviour
 
     public void InitializeTimer(float time)
     {
-        _epreuveTimer = time;
+        _epreuveTimer = time;  
     }
 
     // Update is called once per frame

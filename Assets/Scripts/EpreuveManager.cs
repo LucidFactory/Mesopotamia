@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class EpreuveManager : MonoBehaviour
 {
+    public GameObject PrefabBT;
 
     public GameObject _prefabEpreuveCombatManager;
     public GameObject _timerTextPrefab;
@@ -22,6 +23,7 @@ public class EpreuveManager : MonoBehaviour
     private EpreuveTimerManager _timerManager;
     private GameObject _timerText;
     private GameObject _scoreText;
+    private int _scoreToReach;
 
     private void Awake()
     {
@@ -50,12 +52,12 @@ public class EpreuveManager : MonoBehaviour
                         _timerText.GetComponent<EpreuveTimerManager>().InitializeTimer(num);
 
                         //instantie le score
-                        //int num2 = int.Parse(SplitEpreuve[3]);
+                        _scoreToReach = int.Parse(SplitEpreuve[3]);
                         _scoreText = Instantiate(_scoreTextPrefab, _canvasParent);
-                        //_scoreText.GetComponent<EpreuveScoreManager>().InitializeScore(num2);
 
-                        //cache l'UI de l'histoire
-                        HideUI();
+                        //cache l'UI de l'histoirecv
+                        //HideUI();
+                        GameObject hideUI = Instantiate(PrefabBT, new Vector3(0, 0, 0), Quaternion.identity);
                         break;
                     case "Force Brut":
                         break;
@@ -137,7 +139,7 @@ public class EpreuveManager : MonoBehaviour
     {
         float Score = _scoreText.GetComponent<EpreuveScoreManager>()._score;
 
-        if (Score >= 100)
+        if (Score >= _scoreToReach)
         {
             _inkTest.OnClickChoiceButton(_inkTest._story.currentChoices[0]);
         }
