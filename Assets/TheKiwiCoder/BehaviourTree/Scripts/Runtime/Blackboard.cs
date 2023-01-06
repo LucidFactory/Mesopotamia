@@ -12,5 +12,9 @@ namespace TheKiwiCoder {
 
         public Vector3 moveToPosition;
         public GameObject _canvasToHide;
+        public GameObject _gameObjectToFind;
+        public InkTest _inkTestScript;
+        public string _groupeEpreuve;
+        public bool _timerIsFinished;
     }
 }

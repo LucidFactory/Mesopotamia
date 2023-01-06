@@ -4,28 +4,25 @@ using UnityEngine;
 using TheKiwiCoder;
 
 [System.Serializable]
-public class A_FindCanvas : ActionNode
+public class A_FindGameObjectByName : ActionNode
 {
-    public string _canvasName;
+    public string _gameObjectName;
 
-    private GameObject _canvasToHide;
+    private GameObject _gameObjectFound;
 
     protected override void OnStart() {
-        _canvasToHide = GameObject.Find(_canvasName);
+        _gameObjectFound = GameObject.Find(_gameObjectName);
     }
 
     protected override void OnStop() {
     }
 
     protected override State OnUpdate() {
-        if (_canvasToHide != null)
+        if (_gameObjectFound != null)
         {
-            blackboard._canvasToHide = _canvasToHide;
+            blackboard._gameObjectToFind = _gameObjectFound;
             return State.Success;
         }
-        else
-        {
-            return State.Failure;
-        }
+        else return State.Failure;
     }
 }

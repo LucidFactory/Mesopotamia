@@ -974,7 +974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1682054392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -987,7 +987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7559570386f50d448514d95e7022b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrefabBT: {fileID: 1502069349218217149, guid: 5caf66aa988e81d4aaeaad865f8729cc, type: 3}
+  _prefabBT: {fileID: 1502069349218217149, guid: 5caf66aa988e81d4aaeaad865f8729cc, type: 3}
   _prefabEpreuveCombatManager: {fileID: 2471392016703878300, guid: 9aa775a34882ee545931297fad7db603, type: 3}
   _timerTextPrefab: {fileID: 4913379588667357750, guid: d783c48db10ffe748a3d58abfb078537, type: 3}
   _scoreTextPrefab: {fileID: 8123678073142267715, guid: 922b6c0cafdf0e94db025813aec06c56, type: 3}
@@ -1021,7 +1021,6 @@ GameObject:
   - component: {fileID: 1847941399}
   - component: {fileID: 1847941398}
   - component: {fileID: 1847941397}
-  - component: {fileID: 1847941396}
   m_Layer: 5
   m_Name: CanvasTimerAndScore
   m_TagString: Untagged
@@ -1029,18 +1028,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1847941396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1847941395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 264d45128dbeb3b4eb7d6f930d25db4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1847941397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,7 +1121,6 @@ GameObject:
   - component: {fileID: 1986845025}
   - component: {fileID: 1986845024}
   - component: {fileID: 1986845023}
-  - component: {fileID: 1986845026}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1206,19 +1192,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1986845024}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1986845026}
-        m_TargetAssemblyTypeName: MiniJeuPOC, Assembly-CSharp
-        m_MethodName: OnButtonClicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1986845024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1257,18 +1231,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1986845021}
   m_CullTransparentMesh: 1
---- !u!114 &1986845026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986845021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d68c73890db1ff4588d9934db238cae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2039932774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,3 +1357,4 @@ MonoBehaviour:
   _ButtonWasPressed: 0
   _button: {fileID: 0}
   _epreuveButton: {fileID: 0}
+  _prefabBT: {fileID: 1502069349218217149, guid: 5caf66aa988e81d4aaeaad865f8729cc, type: 3}

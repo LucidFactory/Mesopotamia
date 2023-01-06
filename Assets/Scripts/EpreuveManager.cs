@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TheKiwiCoder;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EpreuveManager : MonoBehaviour
 {
-    public GameObject PrefabBT;
+    public GameObject _prefabBT;
 
     public GameObject _prefabEpreuveCombatManager;
     public GameObject _timerTextPrefab;
@@ -42,22 +44,23 @@ public class EpreuveManager : MonoBehaviour
                     case "Course Poursuite":
                         break;
                     case "Combat":
-                        //instantie la première cible et lance la coroutine
-                        _epreuveCombatManager = Instantiate(_prefabEpreuveCombatManager, new Vector3(0,0,0), Quaternion.identity);
-                        _epreuveCombatManager.GetComponent<EpreuveCombatManager>()._timer = 4.0f;
+                        ////instantie la première cible et lance la coroutine
+                        //_epreuveCombatManager = Instantiate(_prefabEpreuveCombatManager, new Vector3(0,0,0), Quaternion.identity);
+                        //_epreuveCombatManager.GetComponent<EpreuveCombatManager>()._timer = 4.0f;
 
                         //instantie le timer et set le timer
-                        int num = int.Parse(SplitEpreuve[2]);
-                        _timerText = Instantiate(_timerTextPrefab, _canvasParent);
-                        _timerText.GetComponent<EpreuveTimerManager>().InitializeTimer(num);
+                        //int num = int.Parse(SplitEpreuve[2]);
+                        //_timerText = Instantiate(_timerTextPrefab, _canvasParent);
+                        //_timerText.GetComponent<EpreuveTimerManager>().InitializeTimer(num);
 
                         //instantie le score
-                        _scoreToReach = int.Parse(SplitEpreuve[3]);
-                        _scoreText = Instantiate(_scoreTextPrefab, _canvasParent);
 
-                        //cache l'UI de l'histoirecv
+                        //_scoreToReach = int.Parse(SplitEpreuve[3]);
+                        //_scoreText = Instantiate(_scoreTextPrefab, _canvasParent);
+
+                        // Instancier le prefab du behaviour Tree
                         //HideUI();
-                        GameObject hideUI = Instantiate(PrefabBT, new Vector3(0, 0, 0), Quaternion.identity);
+                        //GameObject BT = Instantiate(_prefabBT, new Vector3(0, 0, 0), Quaternion.identity);
                         break;
                     case "Force Brut":
                         break;
@@ -147,6 +150,5 @@ public class EpreuveManager : MonoBehaviour
         {
             _inkTest.OnClickChoiceButton(_inkTest._story.currentChoices[1]);
         }
-
     }
 }

@@ -6,7 +6,7 @@ using TheKiwiCoder;
 [System.Serializable]
 public class A_HideUI : ActionNode
 {
-    public GameObject _canvasToHide;
+    private GameObject _canvasToHide;
 
     protected override void OnStart() {
         _canvasToHide = blackboard._canvasToHide;
@@ -16,17 +16,18 @@ public class A_HideUI : ActionNode
     }
 
     protected override State OnUpdate() {
-        HideUI();
-        return State.Success;
+        return HideUI() ? State.Success : State.Failure;
     }
 
-    private void HideUI()
+    protected bool HideUI()
     {
         //Cache le canvas contenant l'histoire
         if (_canvasToHide != null)
         {
             _canvasToHide.GetComponent<Canvas>();
             _canvasToHide.gameObject.SetActive(false);
+            return true;
         }
+        else return false;
     }
 }

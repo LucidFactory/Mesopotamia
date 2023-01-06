@@ -105,7 +105,6 @@ public class EpreuveCombat : MonoBehaviour
 
             if (_lifeTime <= 0.0f)
             {
-                Debug.Log("Timer is finihsed");
                 _scoreManager.UpdateScore(-10);
                 Destroy(gameObject, 0.1f);
                 _timeIsRunning = false;

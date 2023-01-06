@@ -5,11 +5,13 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Ink.Parsed;
 using Ink.Runtime;
+using TheKiwiCoder;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Choice = Ink.Runtime.Choice;
 using Story = Ink.Runtime.Story;
+
 
 public class InkTest : MonoBehaviour
 {
@@ -32,6 +34,9 @@ public class InkTest : MonoBehaviour
     public bool _ButtonWasPressed;
     public Button _button;
     public Button _epreuveButton;
+
+    public GameObject _prefabBT;
+
 
 
     void Awake()
@@ -68,26 +73,42 @@ public class InkTest : MonoBehaviour
             CreateContentView();
         }
 
+        Debug.Log("je suis avant le foreach");
+        Debug.Log(_story.currentTags.Count);
+
         // Display all the choices, if there are any!
         if (_story.currentChoices.Count > 0)
         {
-            for (int i = 0; i < _story.currentChoices.Count; i++)
+            Debug.Log("je suis avant entre if et la boucle for");
+
+            for (int i = 0; i < _story.currentChoices.Count; i++) //source d'u bug 
             {
                 Choice choice = _story.currentChoices[i];
                 _button = CreateChoiceView(choice.text.Trim());
-                
+
+                Debug.Log("je rentre dans la boucle for");
+
                 foreach (string tag in _story.currentTags)
                 {
+                    Debug.Log("jen suis entrez dans le foreach");
+
                     string[] tagSplitter = tag.Split(":");
                     switch (tagSplitter[0])
                     {
-                        case "Title" :
+                        case "Title":
                             ShowTitle(tagSplitter[1]);
+
+                            Debug.Log("Actualisation du Title");
+                            Debug.Log(tagSplitter[1]);
                             break;
-                        case "MiniGame" :
+                        case "MiniGame":
+                            Debug.Log("Minigame has started");
+
+
                             string[] tagSplitter2 = tagSplitter[1].Split(";");
                             //Hide the button created from Ink and replace them by a button for the Epreuve
                             _button.gameObject.SetActive(false);
+
 
                             if (!_ButtonWasPressed)
                             {
@@ -96,12 +117,14 @@ public class InkTest : MonoBehaviour
 
                                 _epreuveButton.onClick.AddListener(() =>
                                 {
-
                                     // A REMPLACER
                                     _IsMiniGame = true;
                                     StartEpreuve(tagSplitter2[1]);
                                 });
                             }
+                            break;
+                        default:
+                            Debug.Log("je suis dans le default");
                             break;
                     }
                 }
@@ -170,11 +193,13 @@ public class InkTest : MonoBehaviour
     {
         Debug.Log("Est ce que j'ai bien passé mon épreuve ? => " + groupeEpreuve);
 
-        // A REMPLACER
-        _EpreuveManager.ChooseEpreuve(groupeEpreuve);
+        GameObject BT = Instantiate(_prefabBT, new Vector3(0, 0, 0), Quaternion.identity);
 
-        // a retirer plus tard après avoir crée le premier mini jeu
-        _IsMiniGame = false;
+        if (BT != null)
+        {
+            BehaviourTreeRunner prefabBT = _prefabBT.GetComponent<BehaviourTreeRunner>();
+            prefabBT.tree.blackboard._groupeEpreuve = groupeEpreuve;
+        }
     }
     
 
@@ -183,7 +208,14 @@ public class InkTest : MonoBehaviour
     {
         // Dans le doute, on considère que le noeud en cours n'est pas une épreuve.
         _IsMiniGame = false;
-        
+        _ButtonWasPressed = false;
+
+        if (_button != null)
+        {
+            _button.gameObject.SetActive(true);
+
+        }
+
         foreach (Transform childTransform in gameObject.transform)
         {
             if (childTransform.name == "Title") continue;

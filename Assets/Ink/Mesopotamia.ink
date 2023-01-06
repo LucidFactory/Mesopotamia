@@ -7,7 +7,7 @@ Le <b>dieu lunaire</b> Sîn quitte sa demeure en la <i>cité d’Ur</i>, l’Egi
 *[Démarrer la procession] -> procession
 
 === procession ===
-#Title: Acte 1 ; LE VOYAGE DE SÎN À NIPPUR 2eme essaye
+#Title: Acte 1 ; LE VOYAGE DE SÎN À NIPPUR 2eme essaie
 Les flots matinaux emportent la divine embarcation. Le soleil est encore bas sur l’horizon, les oiseaux s’envolent doucement depuis les roseaux et les joncs qui enlacent le fleuve. Sur les barques qui accompagnent celles du dieu, manœuvrées par des esclaves ou des bateleurs, voyagent les dignitaires et les personnes de haut rang. Sur la berge, les échansons, protecteurs, danseurs et musiciens complètent la procession. On transporte des moutons et des porcs, des chariots de denrées sont tractés par des onagres.
 *[nadîtum] -> naditum
 
@@ -24,6 +24,7 @@ Ennegi est à peine plus qu’un grand village. L’empreinte de sa grandeur pas
 -> naditum2
 
 === naditum2 ===
+#Title: Acte 1 ; LE VOYAGE DE SÎN À NIPPUR 3eme essaie
 #MiniGame:Tendre L'oreille;Physique_Combat_10_300
 Tu descends de ton embarcation, tes gens déchargent tes affaires. Tu vois au loin les prêtres de Ningirida échanger quelques mots avec la grande prêtresse de Sîn, tandis que d’autres débarquent avec grand soin la statue du dieu. Un homme se présente à toi : « Bienvenue nadîtum, Ennegi n’est pas très grande, mais nous disposons d’une belle auberge. J’en suis le tenancier : soyez mon hôte. »
 
@@ -31,20 +32,19 @@ Tu descends de ton embarcation, tes gens déchargent tes affaires. Tu vois au lo
 * [Refuser] -> refuser1
 
 === accepter1===
-Tu acceptes bien volontiers : l’homme présente bien et tu ne doutes pas que son établissement sera respectable. Et puis, tu n’as guère envie de finir dans une vulgaire étable. La chapelle de Ningirida n’est même pas un temple, il n’y aura probablement pas la place de t’accueillir : les lieux seront réservés pour Enanedu et sa suite.
-Immédiatement, le tenancier fait signe à tes serviteurs de le suivre avec tes affaires. Il va installer ta chambre.
+#Title: Acte 1 ; LE VOYAGE DE SÎN À NIPPUR 4eme essaie
+Tu acceptes bien volontiers : l’homme présente bien et tu ne doutes pas que son établissement sera respectable. Et puis, tu n’as guère envie de finir dans une vulgaire étable. La chapelle de Ningirida n’est même pas un temple, il n’y aura probablement pas la place de t’accueillir : les lieux seront réservés pour Enanedu et sa suite. Immédiatement, le tenancier fait signe à tes serviteurs de le suivre avec tes affaires. Il va installer ta chambre.
 
-    * [Le suivre] -> auberge
-    *[Te promener dans la ville] -> promener2
+* [Le suivre] -> auberge
+* [Te promener dans la ville] -> promener2
 
 === auberge ===
-    Bien vite, tu te rends compte que d’autres personnes ont suivi ton exemple. Tu partageras les lieux avec des nadîtums, des
-    scribes, des devins. En bref, tous ceux qui préfèrent le confort d’un lit propre aux rudiments de la toile de tente. Il est
-    évident que le village d’Ennegi ne pourra pas accueillir tout le monde en ses murs et beaucoup seront obligés de dormir à la
-    belle étoile. Ici, que du beau monde. 
+#Title: Acte 1 ; LE VOYAGE DE SÎN À NIPPUR 6eme essaie
+    Bien vite, tu te rends compte que d’autres personnes ont suivi ton exemple. Tu partageras les lieux avec des nadîtums, des scribes, des devins. En bref, tous ceux qui préfèrent le confort d’un lit propre aux rudiments de la toile de tente. Il est évident que le village d’Ennegi ne pourra pas accueillir tout le monde en ses murs et beaucoup seront obligés de dormir à la belle étoile. Ici, que du beau monde. 
     
     *[Entrer dans l'auberge] -> auberge_2
 === auberge_2 ===
+#Title: Acte 1 ; LE VOYAGE DE SÎN À NIPPUR 7eme essaie
     L’auberge, conçue comme une grande maison, est organisée autour d’une cour centrale, pavée, pourvue d’un bassin qui recueille
     l’eau de pluie. Des chambres sont réparties autour de cette cour et surtout à l’étage, le long duquel s’ouvre une grande galerie
     de bois et de briques. Ton hôte t’indique ta chambre, à l’étage, et la grande salle principale où tu pourras prendre repas. Les
@@ -64,9 +64,10 @@ Immédiatement, le tenancier fait signe à tes serviteurs de le suivre avec tes 
     pour le départ de la procession. Tu envoies un de tes serviteurs porter ton offrande à ta place : une petite figure d’orant
     gravée de ton nom.
     *[Te reposer] -> repos_2
+    
 === repos_2 ===
-Une fois dans ta chambre, tu ne gardes avec toi qu’une suivante, une esclave du nom de Sâsu, et retires avec un soupir le voile qui couvre ta tête. Sâsu s’occupe de démêler et d’oindre tes cheveux. Pendant ce temps, tu façonnes entre tes doigts une mince plaquette d’argile. Tu n’es pas experte dans l’art délicat de l’écriture, mais tu as eu une éducation suffisante pour tracer quelques mots de ton calame de roseau : une lettre, pour ton frère occupé à gérer certaines de tes affaires pendant ton absence.
-Rapidement, tu entends s’élever les bruits de la foule dans la rue en contrebas, par la mince ouverture allongée et bardée de roseaux en croisillons qui s’ouvre au plus haut du mur de briques de ta chambre. Tu sais qu’une ruelle plus étroite longe la façade, à peine une venelle, un passage pour laisser s’écouler les eaux usagées. Pourtant, tu es certaine que des voix s’élèvent de cet endroit.
+#MiniGame:Tendre L'oreille;Physique_Combat_10_300
+Une fois dans ta chambre, tu ne gardes avec toi qu’une suivante, une esclave du nom de Sâsu, et retires avec un soupir le voile qui couvre ta tête. Sâsu s’occupe de démêler et d’oindre tes cheveux. Pendant ce temps, tu façonnes entre tes doigts une mince plaquette d’argile. Tu n’es pas experte dans l’art délicat de l’écriture, mais tu as eu une éducation suffisante pour tracer quelques mots de ton calame de roseau : une lettre, pour ton frère occupé à gérer certaines de tes affaires pendant ton absence. Rapidement, tu entends s’élever les bruits de la foule dans la rue en contrebas, par la mince ouverture allongée et bardée de roseaux en croisillons qui s’ouvre au plus haut du mur de briques de ta chambre. Tu sais qu’une ruelle plus étroite longe la façade, à peine une venelle, un passage pour laisser s’écouler les eaux usagées. Pourtant, tu es certaine que des voix s’élèvent de cet endroit.
 
 * [Tendre l'oreille - Réussite] -> oreilleok
 * [Tendre l'oreille - Échec] -> oreillenope
@@ -134,12 +135,14 @@ Encore estompée, inéluctablement, la lune se dessine dans le ciel.
  -> ACTE1SCENE2END
  
 === refuser1 ===
+#Title: Acte 1 ; LE VOYAGE DE SÎN À NIPPUR 5eme essaie
 Tu refuses poliment. Tout d’abord, parce que tu sais très bien que l’homme recherche avant tout le prestige d’avoir pu accueillir une nadîtum dans son établissement. Et puis, tu as envie de suivre un peu la statue, de voir comment elle sera accueillie dans la chapelle de Ningirida. Peut-être ses prêtres auront-ils un meilleur logement à te proposer ? Tu aimerais aussi te promener par les rues d’Ennegi, tu ne te souviens pas avoir déjà mis les pieds dans une si petite ville.
 
 *[Quitter le port et suivre la statue] -> statue
 *[Visiter Ennegi] -> visite
 
 === statue ===
+#Title: Acte 1 ; LE VOYAGE DE SÎN À NIPPUR 8eme essaie
 Tu fais signe à tes serviteurs de rester près de tes affaires et observes les suivants d’Enanedu et les officiants du culte de Ningirida s’occuper de la statue du dieu Sîn. Ces derniers sont peu nombreux et probablement ne viennent-ils pas tous d’Ennegi, mais ont-ils été appelés en renfort depuis la proche ville de Larsa pour aider à la cérémonie. Tu t’approches d’un prêtre que tu vois en pleine conversation avec un commerçant.
 « Non, ces bijoux ne conviennent pas ! s’emporte le prêtre. La déesse doit être parée d’or, d’argent... Ce que vous m’apportez n’est pas ce que nous avions convenu.
 — C’est un métal d’une qualité incroyable ! rétorque l’autre, dont l’accent laisse clairement entendre les origines occidentales. Du fer le plus pur ! Le nouveau roi de Mari en utilise même pour sa cour... Vous m’avez demandé des bijoux fins et précieux, voilà ce que nous avons convenu ! »
@@ -156,6 +159,7 @@ Tu fais signe à tes serviteurs de rester près de tes affaires et observes les 
 * [Échec] -> echecdiplo
 
 === force ===
+#Title: Acte 1 ; LE VOYAGE DE SÎN À NIPPUR 9eme essaie
 Sans réfléchir, tu saisis le bras de l’homme avant qu’il ne se referme sur le vêtement du prêtre. 
 * [Réussite] -> reussiteforce
 * [Échec] -> echecforce
