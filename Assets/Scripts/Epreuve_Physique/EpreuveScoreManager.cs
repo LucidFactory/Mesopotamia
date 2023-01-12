@@ -31,7 +31,7 @@ public class EpreuveScoreManager : MonoBehaviour
         int j = 1;
         while (stepNotFound)
         {
-            if (stepScore[i] >= _score && stepScore[j] <= _score)
+            if (stepScore.Length < j || stepScore[i] >= _score && stepScore[j] <= _score)
             {
                 stepFinish = i;
                 stepNotFound = false;
