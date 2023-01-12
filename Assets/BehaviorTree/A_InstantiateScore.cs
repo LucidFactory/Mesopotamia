@@ -30,16 +30,8 @@ public class A_InstantiateScore : ActionNode
 
         if (_scoreText != null)
         {
-            if (blackboard._epreuveScore.Count <= 1)
-            {
-                _scoreText.GetComponent<EpreuveScoreManager>().InitializeScoreToObtain(blackboard._epreuveScore[0]);
-                return State.Success;
-            }
-            else
-            {
-                return State.Success;
-            }
-
+            _scoreText.GetComponent<EpreuveScoreManager>().InitializeScoreToObtain(blackboard._epreuveScore[0]);
+            return State.Success;
         }
         else return State.Failure;
     }

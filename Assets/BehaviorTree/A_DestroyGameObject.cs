@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TheKiwiCoder;
 
@@ -9,14 +7,20 @@ public class A_DestroyGameObject : ActionNode
 
     private GameObject _gameObjectToDestroy;
 
-    protected override void OnStart() {
-        _gameObjectToDestroy = blackboard._gameObjectToFind;
+    protected override void OnStart()
+    {
+        if (blackboard != null)
+        {
+            _gameObjectToDestroy = blackboard._gameObjectToFind;
+        }
     }
 
-    protected override void OnStop() {
+    protected override void OnStop() 
+    {
     }
 
-    protected override State OnUpdate() {
+    protected override State OnUpdate() 
+    {
         if (_gameObjectToDestroy != null)
         {
             Object.Destroy(_gameObjectToDestroy);

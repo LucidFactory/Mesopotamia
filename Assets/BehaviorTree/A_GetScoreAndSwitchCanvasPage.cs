@@ -11,6 +11,7 @@ public class A_GetScoreAndSwitchCanvasPage : ActionNode
     private int _scoreToReach;
     private InkTest _inkTest;
     private string[] _string;
+    private EpreuveScoreManager _epreuveScoreManager;
 
 
     protected override void OnStart() 
@@ -22,10 +23,7 @@ public class A_GetScoreAndSwitchCanvasPage : ActionNode
             _inkTest = blackboard._inkTestScript;
         }
 
-        if (blackboard._groupeEpreuve != null)
-        {
-            _string = blackboard._groupeEpreuve.Split("_");
-        }
+        _epreuveScoreManager = _scoreText.GetComponent<EpreuveScoreManager>();
     }
 
     protected override void OnStop() {
@@ -33,21 +31,10 @@ public class A_GetScoreAndSwitchCanvasPage : ActionNode
 
     protected override State OnUpdate() 
     {
-        float Score = _scoreText.GetComponent<EpreuveScoreManager>()._score;
+        int etape = _epreuveScoreManager.FinishedStep(blackboard._epreuveScore);
+        Debug.Log("je suis à l'étape numéro : " + etape);
 
-        string[] tagPlitter = _string[2].Split("/");
-        string[] tagSplitter2 = tagPlitter[1].Split("-");
-        _scoreToReach = int.Parse(tagSplitter2[0]);
-
-        if (Score >= _scoreToReach)
-        {
-            _inkTest.OnClickChoiceButton(_inkTest._story.currentChoices[0]);
-            return State.Success;
-        }
-        else
-        {
-            _inkTest.OnClickChoiceButton(_inkTest._story.currentChoices[1]);
-            return State.Failure;
-        }
+        _inkTest.OnClickChoiceButton(_inkTest._story.currentChoices[etape]);
+        return State.Success;
     }
 }

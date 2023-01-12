@@ -204,7 +204,6 @@ public class InkTest : MonoBehaviour
             prefabBT.tree.blackboard._epreuveTime =int.Parse(groupeEpreuveSPlitter[2]);
             string[] tagSplitter = groupeEpreuveSPlitter[3].Split('-');
 
-            Debug.Log(tagSplitter.Length);
             prefabBT.tree.blackboard._epreuveScore.Clear();
 
             for (int i = 0; i < tagSplitter.Length; i++)
