@@ -30,24 +30,13 @@ public class A_InstantiateScore : ActionNode
 
         if (_scoreText != null)
         {
-            //string[] tagPlitter = _string[2].Split("/");
-            //string[] tagSplitter2 = tagPlitter[1].Split("-");
-            //int num = int.Parse(tagSplitter2[0]);
-            //Debug.Log("cout : " + blackboard._epreuveScore.Count);
-
             if (blackboard._epreuveScore.Count <= 1)
             {
-                Debug.Log("je suis dans le cas numero 1" + blackboard._epreuveScore[0]);
-
-
                 _scoreText.GetComponent<EpreuveScoreManager>().InitializeScoreToObtain(blackboard._epreuveScore[0]);
                 return State.Success;
             }
             else
             {
-                Debug.Log("je suis dans le cas numero 2" + blackboard._epreuveScore[0]);
-
-                // epreuve multiple
                 return State.Success;
             }
 
