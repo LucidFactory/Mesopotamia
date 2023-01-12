@@ -14,10 +14,10 @@ public class A_InstantiateScore : ActionNode
 
     protected override void OnStart() 
     {
-        if (blackboard._groupeEpreuve != null)
-        {
-            _string = blackboard._groupeEpreuve.Split("_");
-        }
+        //if (blackboard._groupeEpreuve != null)
+        //{
+        //    _string = blackboard._groupeEpreuve.Split("_");
+        //}
         _canvasParent = GameObject.Find("CanvasTimerAndScore").transform;
     }
 
@@ -27,9 +27,30 @@ public class A_InstantiateScore : ActionNode
     protected override State OnUpdate() 
     {
         _scoreText = GameObject.Instantiate(_scoreTextPrefab, _canvasParent);
-        if (_scoreText)
+
+        if (_scoreText != null)
         {
-            return State.Success;
+            //string[] tagPlitter = _string[2].Split("/");
+            //string[] tagSplitter2 = tagPlitter[1].Split("-");
+            //int num = int.Parse(tagSplitter2[0]);
+            //Debug.Log("cout : " + blackboard._epreuveScore.Count);
+
+            if (blackboard._epreuveScore.Count <= 1)
+            {
+                Debug.Log("je suis dans le cas numero 1" + blackboard._epreuveScore[0]);
+
+
+                _scoreText.GetComponent<EpreuveScoreManager>().InitializeScoreToObtain(blackboard._epreuveScore[0]);
+                return State.Success;
+            }
+            else
+            {
+                Debug.Log("je suis dans le cas numero 2" + blackboard._epreuveScore[0]);
+
+                // epreuve multiple
+                return State.Success;
+            }
+
         }
         else return State.Failure;
     }

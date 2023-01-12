@@ -26,7 +26,7 @@ Ennegi est à peine plus qu’un grand village. L’empreinte de sa grandeur pas
 === naditum2 ===
 #Title: Acte 1 ; LE VOYAGE DE SÎN À NIPPUR 3eme essaie
 #MiniGame:Tendre L'oreille;Physique_Combat_10_300
-Tu descends de ton embarcation, tes gens déchargent tes affaires. Tu vois au loin les prêtres de Ningirida échanger quelques mots avec la grande prêtresse de Sîn, tandis que d’autres débarquent avec grand soin la statue du dieu. Un homme se présente à toi : « Bienvenue nadîtum, Ennegi n’est pas très grande, mais nous disposons d’une belle auberge. J’en suis le tenancier : soyez mon hôte. »
+Tu descends de ton embarcation, tes gens déchargent tes affaires. <br/>Tu vois au loin les prêtres de Ningirida échanger quelques mots avec la grande prêtresse de Sîn, tandis que d’autres débarquent avec grand soin la statue du dieu. Un homme se présente à toi : « Bienvenue nadîtum, Ennegi n’est pas très grande, mais nous disposons d’une belle auberge. J’en suis le tenancier : soyez mon hôte. »
 
 * [Accepter] -> accepter1
 * [Refuser] -> refuser1
@@ -136,7 +136,8 @@ Encore estompée, inéluctablement, la lune se dessine dans le ciel.
  
 === refuser1 ===
 #Title: Acte 1 ; LE VOYAGE DE SÎN À NIPPUR 5eme essaie
-Tu refuses poliment. Tout d’abord, parce que tu sais très bien que l’homme recherche avant tout le prestige d’avoir pu accueillir une nadîtum dans son établissement. Et puis, tu as envie de suivre un peu la statue, de voir comment elle sera accueillie dans la chapelle de Ningirida. Peut-être ses prêtres auront-ils un meilleur logement à te proposer ? Tu aimerais aussi te promener par les rues d’Ennegi, tu ne te souviens pas avoir déjà mis les pieds dans une si petite ville.
+Tu refuses poliment. Tout d’abord, parce que tu sais très bien que l’homme recherche avant tout le prestige d’avoir pu accueillir une nadîtum dans son établissement. Et puis, tu as envie de suivre un peu la statue, de voir comment elle sera accueillie dans la chapelle de Ningirida. 
+Peut-être ses prêtres auront-ils un meilleur logement à te proposer ? Tu aimerais aussi te promener par les rues d’Ennegi, tu ne te souviens pas avoir déjà mis les pieds dans une si petite ville.
 
 *[Quitter le port et suivre la statue] -> statue
 *[Visiter Ennegi] -> visite

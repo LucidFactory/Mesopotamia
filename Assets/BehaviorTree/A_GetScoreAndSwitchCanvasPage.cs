@@ -34,7 +34,10 @@ public class A_GetScoreAndSwitchCanvasPage : ActionNode
     protected override State OnUpdate() 
     {
         float Score = _scoreText.GetComponent<EpreuveScoreManager>()._score;
-        _scoreToReach = int.Parse(_string[3]);
+
+        string[] tagPlitter = _string[2].Split("/");
+        string[] tagSplitter2 = tagPlitter[1].Split("-");
+        _scoreToReach = int.Parse(tagSplitter2[0]);
 
         if (Score >= _scoreToReach)
         {

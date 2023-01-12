@@ -21,17 +21,17 @@ public class A_GroupeEpreuve : ActionNode
     
     protected override void OnStart()
     {
-        if (blackboard._groupeEpreuve != null)
-        {
-            _string = blackboard._groupeEpreuve.Split("_");
-        }
+        //if (blackboard._groupeEpreuve != null)
+        //{
+        //    _string = blackboard._groupeEpreuve.Split("_");
+        //}
     }
 
     protected override void OnStop() {
     }
 
     protected override State OnUpdate() {
-        if (_string[0] == _nameList.ToString())
+        if (blackboard._groupeEpreuve == _nameList.ToString())
         {
             return State.Success;
         }

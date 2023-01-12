@@ -25,10 +25,10 @@ public class A_EpreuveType : ActionNode
 
     protected override void OnStart()
     {
-        if (blackboard._groupeEpreuve != null)
-        {
-            _string = blackboard._groupeEpreuve.Split("_");
-        }
+        //if (blackboard._groupeEpreuve != null)
+        //{
+        //    _string = blackboard._groupeEpreuve.Split("_");
+        //}
     }
 
     protected override void OnStop()
@@ -37,7 +37,7 @@ public class A_EpreuveType : ActionNode
 
     protected override State OnUpdate()
     {
-        if (_string[1] == _nameList.ToString())
+        if (blackboard._epreuve == _nameList.ToString())
         {
             return State.Success;
         }

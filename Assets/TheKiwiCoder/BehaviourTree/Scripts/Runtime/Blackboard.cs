@@ -14,7 +14,12 @@ namespace TheKiwiCoder {
         public GameObject _canvasToHide;
         public GameObject _gameObjectToFind;
         public InkTest _inkTestScript;
+        #region groupeEpreuve
         public string _groupeEpreuve;
+        public string _epreuve;
+        public int  _epreuveTime;
+        public List<int> _epreuveScore;
+        #endregion 
         public bool _timerIsFinished;
     }
 }

@@ -73,24 +73,24 @@ public class InkTest : MonoBehaviour
             CreateContentView();
         }
 
-        Debug.Log("je suis avant le foreach");
+        //Debug.Log("je suis avant le foreach");
         Debug.Log(_story.currentTags.Count);
 
         // Display all the choices, if there are any!
         if (_story.currentChoices.Count > 0)
         {
-            Debug.Log("je suis avant entre if et la boucle for");
+            //Debug.Log("je suis avant entre if et la boucle for");
 
-            for (int i = 0; i < _story.currentChoices.Count; i++) //source d'u bug 
+            for (int i = 0; i < _story.currentChoices.Count; i++)
             {
                 Choice choice = _story.currentChoices[i];
                 _button = CreateChoiceView(choice.text.Trim());
 
-                Debug.Log("je rentre dans la boucle for");
+                //Debug.Log("je rentre dans la boucle for");
 
                 foreach (string tag in _story.currentTags)
                 {
-                    Debug.Log("jen suis entrez dans le foreach");
+                    //Debug.Log("jen suis entrez dans le foreach");
 
                     string[] tagSplitter = tag.Split(":");
                     switch (tagSplitter[0])
@@ -98,11 +98,11 @@ public class InkTest : MonoBehaviour
                         case "Title":
                             ShowTitle(tagSplitter[1]);
 
-                            Debug.Log("Actualisation du Title");
-                            Debug.Log(tagSplitter[1]);
+                            //Debug.Log("Actualisation du Title");
+                            //Debug.Log(tagSplitter[1]);
                             break;
                         case "MiniGame":
-                            Debug.Log("Minigame has started");
+                            //Debug.Log("Minigame has started");
 
 
                             string[] tagSplitter2 = tagSplitter[1].Split(";");
@@ -124,7 +124,7 @@ public class InkTest : MonoBehaviour
                             }
                             break;
                         default:
-                            Debug.Log("je suis dans le default");
+                            //Debug.Log("je suis dans le default");
                             break;
                     }
                 }
@@ -198,7 +198,19 @@ public class InkTest : MonoBehaviour
         if (BT != null)
         {
             BehaviourTreeRunner prefabBT = _prefabBT.GetComponent<BehaviourTreeRunner>();
-            prefabBT.tree.blackboard._groupeEpreuve = groupeEpreuve;
+            string[] groupeEpreuveSPlitter = groupeEpreuve.Split('_');
+            prefabBT.tree.blackboard._groupeEpreuve = groupeEpreuveSPlitter[0];
+            prefabBT.tree.blackboard._epreuve = groupeEpreuveSPlitter[1];
+            prefabBT.tree.blackboard._epreuveTime =int.Parse(groupeEpreuveSPlitter[2]);
+            string[] tagSplitter = groupeEpreuveSPlitter[3].Split('-');
+
+            Debug.Log(tagSplitter.Length);
+            prefabBT.tree.blackboard._epreuveScore.Clear();
+
+            for (int i = 0; i < tagSplitter.Length; i++)
+            {
+                prefabBT.tree.blackboard._epreuveScore.Add(int.Parse(tagSplitter[i]));
+            }
         }
     }
     

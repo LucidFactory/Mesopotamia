@@ -37,7 +37,7 @@ public class EpreuveTimerManager : MonoBehaviour
     void Update()
     {
         _epreuveTimer -= Time.deltaTime;
-        _timerText.text = "Time Remaining " + _epreuveTimer.ToString();
+        _timerText.text = "Time Remaining " + _epreuveTimer.ToString("F1");
 
         if(_epreuveIsOver && _epreuveTimer <= 0 /*&& _epreuveManager != null*/)
         {

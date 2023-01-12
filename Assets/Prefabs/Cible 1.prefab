@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeTime: 4
-  _prefabTarget: {fileID: 0}
+  _amountOfScoreToTakeAwayIfLifetimeIsExeeded: 10
 --- !u!1 &6018220157392997316
 GameObject:
   m_ObjectHideFlags: 0

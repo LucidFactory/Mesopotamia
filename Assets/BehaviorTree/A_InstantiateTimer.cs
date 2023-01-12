@@ -14,10 +14,10 @@ public class A_InstantiateTimer : ActionNode
 
     protected override void OnStart()
     {
-        if (blackboard._groupeEpreuve != null)
-        {
-            _string = blackboard._groupeEpreuve.Split("_");
-        }
+        //if (blackboard._groupeEpreuve != null)
+        //{
+        //    _string = blackboard._groupeEpreuve.Split("_");
+        //}
         _canvasParent = GameObject.Find("CanvasTimerAndScore").transform;
     }
  
@@ -26,10 +26,13 @@ public class A_InstantiateTimer : ActionNode
 
     protected override State OnUpdate() 
     {
-        int num = int.Parse(_string[2]);
+        //string[] tagPlitter = _string[2].Split("/");
+        //int num = int.Parse(_string[2]);
+
+
 
         _timerText = GameObject.Instantiate(_timerTextPrefab, _canvasParent);
-        _timerText.GetComponent<EpreuveTimerManager>().InitializeTimer(num);
+        _timerText.GetComponent<EpreuveTimerManager>().InitializeTimer(blackboard._epreuveTime);
 
         if (_timerText != null)
         {
